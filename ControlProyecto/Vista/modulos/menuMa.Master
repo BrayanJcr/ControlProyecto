@@ -6,8 +6,11 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Grupo Bravajal</title>
+
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/menuCSS.css">
-     <script scr="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script scr="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 
     <!-- Boxicons CDN Link -->
 
@@ -25,52 +28,53 @@
                         class="bx bxl-c-plus-plus icon" alt="" loading="lazy">
                     <i class='bx bx-menu' id="btn"></i>
                 </div>
-            <ul class="nav-list">
-                <li>
-                    <i class='bx bx-search' ></i>
-                    <input type="text" placeholder="Buscar...">
-                    <span class="tooltip">Buscar</span>
-                </li>
-                <li>
-                <a href="tablero.aspx">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">Tablero</span>
-                </a>
-                    <span class="tooltip">Tablero</span>
-                </li>
-                <li>
-                <a href="usuarios.aspx">
-                    <i class='bx bx-user' ></i>
-                    <span class="links_name">Usuarios</span>
-                </a>
-                <span class="tooltip">Usuarios</span>
-                </li>
-                <li>
-                    <a href="actividades.aspx">
-                        <i class='bx bx-calendar-check'></i>
-                        <span class="links_name">Actividades</span>
-                    </a>
-                <span class="tooltip">Actividades</span>
-                </li>
-     
-                <li class="profile">
-                    <div class="profile-details">
-                    <img src="../img/brayan.jpg" alt="profileImg">
-                    <div class="name_job">
-                        <div class="name">Brayan Javier</div>
-                        <div class="job">Ing. Sistemas</div>
-                    </div>
-                    </div>
-                    <i class='bx bx-log-out' id="log_out" ></i>
-                </li>
-            </ul>
-            </div>
-            
 
+                <ul class="nav-list">
+                    <li>
+                        <i class='bx bx-search' ></i>
+                        <input type="text" placeholder="Buscar...">
+                        <span class="tooltip">Buscar</span>
+                    </li>
+                    <li>
+                    <a href="tablero.aspx">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="links_name">Tablero</span>
+                    </a>
+                        <span class="tooltip">Tablero</span>
+                    </li>
+                    <li>
+                    <a href="usuarios.aspx">
+                        <i class='bx bx-user' ></i>
+                        <span class="links_name">Usuarios</span>
+                    </a>
+                    <span class="tooltip">Usuarios</span>
+                    </li>
+                    <li>
+                        <a href="actividades.aspx">
+                            <i class='bx bx-calendar-check'></i>
+                            <span class="links_name">Actividades</span>
+                        </a>
+                    <span class="tooltip">Actividades</span>
+                    </li>
+     
+                    <li class="profile">
+                        <div class="profile-details">
+                        <img src="../img/brayan.jpg" alt="profileImg">
+                        <div class="name_job">
+                            <div class="name">Brayan Javier</div>
+                            <div class="job">Ing. Sistemas</div>
+                        </div>
+                        </div>
+                        <i class='bx bx-log-out' id="log_out" ></i>
+                    </li>
+                </ul>
+            </div>
+            <script src="../abootstrap/js/bootstrap.bundle.min.js"></script>
             <script src="../js/menuJS.js"></script>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
+
 </body>
 </html>
