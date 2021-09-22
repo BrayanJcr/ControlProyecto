@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ControlProyecto.Vista.modulos
+namespace ControlProyecto.Views
 {
 
 

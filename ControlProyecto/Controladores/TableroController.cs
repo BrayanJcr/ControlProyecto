@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace ControlProyecto.Controladores
 {
-    public class UsuarioController : Controller
+    public class TableroController : Controller
     {
-        // GET: Usuario
+        // GET: Tablero
         public ActionResult Index()
         {
             return View();

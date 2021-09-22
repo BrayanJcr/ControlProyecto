@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ControlProyecto.Vista.modulos
+namespace ControlProyecto.Views.Tablero
 {
 
 
-    public partial class WebForm3
+    public partial class Tablero
     {
     }
 }

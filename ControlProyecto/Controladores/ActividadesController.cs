@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace ControlProyecto.Controladores
 {
-    public class UsuarioController : Controller
+    public class ActividadesController : Controller
     {
-        // GET: Usuario
-        public ActionResult Index()
+        // GET: Actividades
+        public ActionResult Actividades()
         {
             return View();
         }

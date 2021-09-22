@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.Base.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
     </Reference>
@@ -61,6 +67,8 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -109,117 +117,189 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="img\contruccion.jpg" />
-    <Content Include="Vista\bootstrap\css\bootstrap-grid.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap-grid.min.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap-grid.rtl.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap-grid.rtl.min.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap-reboot.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap-reboot.min.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap-reboot.rtl.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap-reboot.rtl.min.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap-utilities.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap-utilities.min.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap-utilities.rtl.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap-utilities.rtl.min.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap.rtl.css" />
-    <Content Include="Vista\bootstrap\css\bootstrap.rtl.min.css" />
-    <Content Include="Vista\bootstrap\js\bootstrap.bundle.js" />
-    <Content Include="Vista\bootstrap\js\bootstrap.bundle.min.js" />
-    <Content Include="Vista\bootstrap\js\bootstrap.esm.js" />
-    <Content Include="Vista\bootstrap\js\bootstrap.esm.min.js" />
-    <Content Include="Vista\bootstrap\js\bootstrap.js" />
-    <Content Include="Vista\bootstrap\js\bootstrap.min.js" />
-    <Content Include="Vista\css\actividad.css" />
-    <Content Include="Vista\css\login.css" />
-    <Content Include="Vista\img\brayan.jpg" />
-    <Content Include="Vista\img\logo.svg" />
-    <Content Include="Vista\modulos\index.html" />
-    <Content Include="Vista\modulos\Login.aspx" />
-    <Content Include="Vista\modulos\Login.html" />
-    <Content Include="Vista\css\menuCSS.css" />
-    <Content Include="Vista\js\menuJS.js" />
-    <Content Include="Vista\modulos\actividades.aspx" />
-    <Content Include="Vista\modulos\tablero.aspx" />
-    <Content Include="Vista\modulos\usuarios.aspx" />
+    <Content Include="Modelo\DB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DB.edmx</DependentUpon>
+      <LastGenOutput>DB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modelo\DB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DB.edmx</DependentUpon>
+      <LastGenOutput>DB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Actividades\Actividades.aspx" />
+    <Content Include="Views\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Views\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Views\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Views\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Views\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Views\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Views\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Views\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Views\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Views\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Views\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Views\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Views\bootstrap\css\bootstrap.css" />
+    <Content Include="Views\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Views\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Views\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Views\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Views\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Views\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Views\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Views\bootstrap\js\bootstrap.js" />
+    <Content Include="Views\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Views\css\actividad.css" />
+    <Content Include="Views\css\login.css" />
+    <Content Include="Views\img\brayan.jpg" />
+    <Content Include="Views\img\logo.svg" />
+    <Content Include="Views\modulos\index.html" />
+    <Content Include="Views\modulos\Login.aspx" />
+    <Content Include="Views\modulos\Login.html" />
+    <Content Include="Views\css\menuCSS.css" />
+    <Content Include="Views\js\menuJS.js" />
+    <Content Include="Views\Tablero\Tablero.aspx" />
+    <Content Include="Views\Usuario\Usuarios.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="beans\Usuario.cs" />
+    <Compile Include="Controladores\ActividadesController.cs" />
+    <Compile Include="Controladores\TableroController.cs" />
     <Compile Include="Controladores\UsuarioController.cs" />
+    <Compile Include="Modelo\DB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\DB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sysdiagrams.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tblActividad.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tblArea.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tblCargo.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tblFirmaDigital.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tblProfesion.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tblProfesional.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tblProfesionalxReunion.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tblProyecto.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tblRecurso.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tblRecursoxActividad.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tblReunion.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tblUsuario.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vista\modulos\Login.aspx.cs">
+    <Compile Include="Views\Actividades\Actividades.aspx.cs">
+      <DependentUpon>Actividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Actividades\Actividades.aspx.designer.cs">
+      <DependentUpon>Actividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\menuMa.Master.cs">
+      <DependentUpon>menuMa.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\menuMa.Master.designer.cs">
+      <DependentUpon>menuMa.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\modulos\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vista\modulos\Login.aspx.designer.cs">
+    <Compile Include="Views\modulos\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vista\modulos\menuMa.Master.cs">
-      <DependentUpon>menuMa.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vista\modulos\menuMa.Master.designer.cs">
-      <DependentUpon>menuMa.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\modulos\tablero.aspx.cs">
-      <DependentUpon>tablero.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vista\modulos\tablero.aspx.designer.cs">
-      <DependentUpon>tablero.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\modulos\WebForm1.aspx.cs">
+    <Compile Include="Views\modulos\WebForm1.aspx.cs">
       <DependentUpon>index.html</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vista\modulos\WebForm1.aspx.designer.cs">
+    <Compile Include="Views\modulos\WebForm1.aspx.designer.cs">
       <DependentUpon>index.html</DependentUpon>
     </Compile>
-    <Compile Include="Vista\modulos\actividades.aspx.cs">
-      <DependentUpon>actividades.aspx</DependentUpon>
+    <Compile Include="Views\Tablero\Tablero.aspx.cs">
+      <DependentUpon>Tablero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vista\modulos\actividades.aspx.designer.cs">
-      <DependentUpon>actividades.aspx</DependentUpon>
+    <Compile Include="Views\Tablero\Tablero.aspx.designer.cs">
+      <DependentUpon>Tablero.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vista\modulos\usuarios.aspx.cs">
-      <DependentUpon>usuarios.aspx</DependentUpon>
+    <Compile Include="Views\Usuario\Usuarios.aspx.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vista\modulos\usuarios.aspx.designer.cs">
-      <DependentUpon>usuarios.aspx</DependentUpon>
+    <Compile Include="Views\Usuario\Usuarios.aspx.designer.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="libman.json" />
+    <EntityDeploy Include="Modelo\DB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Modelo\DB.edmx.diagram">
+      <DependentUpon>DB.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Vista\modulos\menuMa.Master" />
-    <Content Include="Vista\bootstrap\css\bootstrap-grid.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap-grid.min.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap-grid.rtl.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap-reboot.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap-reboot.min.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap-reboot.rtl.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap-utilities.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap-utilities.min.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap-utilities.rtl.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap.rtl.css.map" />
-    <Content Include="Vista\bootstrap\css\bootstrap.rtl.min.css.map" />
-    <Content Include="Vista\bootstrap\js\bootstrap.bundle.js.map" />
-    <Content Include="Vista\bootstrap\js\bootstrap.bundle.min.js.map" />
-    <Content Include="Vista\bootstrap\js\bootstrap.esm.js.map" />
-    <Content Include="Vista\bootstrap\js\bootstrap.esm.min.js.map" />
-    <Content Include="Vista\bootstrap\js\bootstrap.js.map" />
-    <Content Include="Vista\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Views\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Views\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Views\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Views\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Views\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Views\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Views\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Views\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Views\menuMa.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -228,9 +308,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Modelo\" />
     <Folder Include="Views\Default\" />
-    <Folder Include="Views\Usuario\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

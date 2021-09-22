@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ControlProyecto.Vista.modulos
+namespace ControlProyecto.Views.Tablero
 {
-    public partial class tablero : System.Web.UI.Page
+    public partial class Tablero : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
