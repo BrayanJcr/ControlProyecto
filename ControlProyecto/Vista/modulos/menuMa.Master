@@ -18,6 +18,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -67,6 +68,7 @@
                         </div>
                         <i class='bx bx-log-out' id="log_out" ></i>
                     </li>
+
                 </ul>
             </div>
             <script src="../abootstrap/js/bootstrap.bundle.min.js"></script>

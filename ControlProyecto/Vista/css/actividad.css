@@ -16,4 +16,6 @@ section .text{
     section .btn {
         background-color: red;
         left: 78px;
+        margin-left: 20%;
+        margin:200%;
     }
