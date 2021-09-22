@@ -133,8 +133,10 @@
     <Content Include="Vista\bootstrap\js\bootstrap.min.js" />
     <Content Include="Vista\css\actividad.css" />
     <Content Include="Vista\css\login.css" />
+    <Content Include="Vista\css\usuario.css" />
     <Content Include="Vista\img\brayan.jpg" />
     <Content Include="Vista\img\logo.svg" />
+    <Content Include="Vista\modulos\Formulario web1.aspx" />
     <Content Include="Vista\modulos\index.html" />
     <Content Include="Vista\modulos\Login.aspx" />
     <Content Include="Vista\modulos\Login.html" />
@@ -149,6 +151,13 @@
     <Compile Include="beans\Usuario.cs" />
     <Compile Include="Controladores\UsuarioController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\modulos\Formulario web1.aspx.cs">
+      <DependentUpon>Formulario web1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\modulos\Formulario web1.aspx.designer.cs">
+      <DependentUpon>Formulario web1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\modulos\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
