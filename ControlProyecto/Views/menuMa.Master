@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="css/menuCSS.css">
 
-    <script scr="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     
 
     <!-- Boxicons CDN Link -->
@@ -49,7 +49,7 @@
                     <span class="tooltip">Usuarios</span>
                     </li>
                     <li>
-                        <a href="../Actividades/Actividades.aspx">
+                        <a href="../Actividades/Actividad.aspx">
                             <i class='bx bx-calendar-check'></i>
                             <span class="links_name">Actividades</span>
                         </a>

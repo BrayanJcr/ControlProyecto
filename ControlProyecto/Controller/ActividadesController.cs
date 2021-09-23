@@ -9,7 +9,7 @@ namespace ControlProyecto.Controladores
     public class ActividadesController : Controller
     {
         // GET: Actividades
-        public ActionResult Actividades()
+        public ActionResult Actividad()
         {
             return View();
         }

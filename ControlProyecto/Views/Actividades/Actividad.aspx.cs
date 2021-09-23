@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace ControlProyecto.Views.Actividades
 {
-    public partial class Actividades : System.Web.UI.Page
+    public partial class Actividad : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -117,17 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="img\contruccion.jpg" />
-    <Content Include="Modelo\DB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DB.edmx</DependentUpon>
-      <LastGenOutput>DB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Modelo\DB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DB.edmx</DependentUpon>
-      <LastGenOutput>DB.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Actividades\Actividades.aspx" />
+    <Content Include="Views\Actividades\Actividad.aspx" />
     <Content Include="Views\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Views\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Views\bootstrap\css\bootstrap-grid.rtl.css" />
@@ -156,7 +146,6 @@
     <Content Include="Views\img\logo.svg" />
     <Content Include="Views\modulos\index.html" />
     <Content Include="Views\modulos\Login.aspx" />
-    <Content Include="Views\modulos\Login.html" />
     <Content Include="Views\css\menuCSS.css" />
     <Content Include="Views\js\menuJS.js" />
     <Content Include="Views\Tablero\Tablero.aspx" />
@@ -165,71 +154,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="beans\Usuario.cs" />
-    <Compile Include="Controladores\ActividadesController.cs" />
-    <Compile Include="Controladores\TableroController.cs" />
-    <Compile Include="Controladores\UsuarioController.cs" />
-    <Compile Include="Modelo\DB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\DB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\DB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DB.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\sysdiagrams.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\tblActividad.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\tblArea.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\tblCargo.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\tblFirmaDigital.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\tblProfesion.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\tblProfesional.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\tblProfesionalxReunion.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\tblProyecto.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\tblRecurso.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\tblRecursoxActividad.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\tblReunion.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\tblUsuario.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Controller\ActividadesController.cs" />
+    <Compile Include="Controller\TableroController.cs" />
+    <Compile Include="Controller\UsuarioController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Actividades\Actividades.aspx.cs">
-      <DependentUpon>Actividades.aspx</DependentUpon>
-    
+    <Compile Include="Views\Actividades\Actividad.aspx.cs">
+      <DependentUpon>Actividad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Actividades\Actividades.aspx.designer.cs">
-      <DependentUpon>Actividades.aspx</DependentUpon>
+    <Compile Include="Views\Actividades\Actividad.aspx.designer.cs">
+      <DependentUpon>Actividad.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\menuMa.Master.cs">
       <DependentUpon>menuMa.Master</DependentUpon>
@@ -268,13 +202,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="libman.json" />
-    <EntityDeploy Include="Modelo\DB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Modelo\DB.edmx.diagram">
-      <DependentUpon>DB.edmx</DependentUpon>
-    </Content>
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -309,6 +236,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Model\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
